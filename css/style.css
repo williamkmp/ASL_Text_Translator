@@ -1,0 +1,507 @@
+:root{
+    --black: #000000;
+    --white: #ffffff;
+    --grey: #b9b9b9;
+    --lightgrey: #dbdbdb;
+    --darkgrey: #616161;
+}
+
+body {
+    position:fixed;
+    background-color: var(--black);
+}
+
+*{
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    touch-action: manipulation;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+/* font-family: 'Abril Fatface', cursive; */
+/* font-family: 'Roboto Mono', monospace; */
+
+.box {
+    width: 100vw;
+    height: 100vh;
+
+    position:fixed;
+    top:0px;
+    left:0px;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.title {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 110px;
+    color: var(--white);
+
+}
+
+.heading {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 70px;
+    color: var(--lightgrey); 
+}
+
+.left{
+    width: 50%;
+    height: 100%;
+
+    float: left;
+    background-color: var(--black);
+    padding: 5%;
+
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.right{
+    width: 50%;
+    height: 100%;
+    float: right;
+    
+    background-color: var(--white);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.button {
+	box-shadow: 0px 0px 50px -5px var(--black);
+	background-color:var(--white);
+	
+    border-radius:28px;
+    position: relative;
+    z-index: 999;
+	border: none;
+	color:var(--black);
+
+	font-family: 'Roboto Mono', monospace;
+	font-size:25px;
+    font-weight: 500;
+	padding:15px 65px;
+	text-decoration:none;
+}
+
+button:hover{
+    background-color: pink;
+    margin:0px 0px 0px 0px;
+}
+
+.button:hover {
+	background-color:var(--black);
+	border: 5px solid var(--white);
+	color:var(--white);
+}
+
+.image{
+    width: 100%;
+
+    position: absolute;
+    z-index: 1;
+    bottom: 0px;
+
+    filter: grayscale(100%) brightness(70%) saturate(0%) contrast(200%);
+}
+
+.wooshLeft{
+    animation-name: goLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.delete{
+    animation-name: delete;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+.wooshRight{
+    animation-name: goRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes goLeft {
+    from {
+        transform: translateX(0%)
+    }
+    to {
+        transform: translateX(-100%);
+        display:none;
+    }
+}
+
+@keyframes delete {
+    from {
+        transform: translateY(0%);  
+    }
+    to {
+        transform: translateY(100%);
+        display:none;
+    }
+}
+
+@keyframes goRight {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(100%);
+        display: none;
+    }
+}
+
+.Page {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black);
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.top {
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topLeft {
+    width: 50%;
+    height: 100%; 
+    display: flex;
+}
+
+.topRight {
+    width: 50%;
+    height: 100%;
+    display:flex;  
+}
+
+#txtArea {
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    
+    border: none;
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.aslArea {
+    width: 50vw;
+    height: 50vh;
+
+    background-color: var(--lightgrey);
+    overflow: auto;
+
+    display: inline-block;
+    overflow: auto;
+}
+
+.label {
+    
+    position: absolute;
+    z-index: 99;
+    bottom: 0px;
+    left: 0px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.bottom {
+    width:100%;
+    height:50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.row{
+    width: 100%;
+    height: 40%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.swapButton{
+    width: 25%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--black);
+
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--white);
+
+    border: 2px solid var(--white);
+}
+
+.spaceButton{
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--black);
+
+    font-size: 18px;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--white);
+
+    border: 2px solid var(--white);
+}
+
+.delButton{
+    width: 20%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--black);
+
+    font-size: 18px;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--white);
+
+    border: 2px solid var(--white);
+}
+
+.frameKey{
+    width: 10%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid var(--white);
+    background-color: var(--black);
+}
+
+.letterKey{
+    width: 100%;
+    height: 100%;
+    background-color:inherit;
+
+    display: inherit;
+    justify-content: inherit;
+    align-items:inherit;
+
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--white);
+
+}
+
+.swapButton:hover, .delButton:hover, .letterKey:hover{
+    border: 2px solid var(--darkgrey);
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.aslKey{
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+
+    display: inherit;
+    justify-content: inherit;
+    align-items:inherit;
+
+    object-fit: scale-down;
+    display: none;
+}
+
+.aslKey img{
+    width: 60%;
+    object-fit: scale-down;
+}
+
+.aslKey:hover{
+    background-color: var(--white);
+    border: 2px solid var(--darkgrey);
+}
+
+.aslKey:hover img{
+    filter: invert(100%);
+}
+
+.aslCard{
+    width: 20%;
+    height: 20%;
+
+    display: inline-block;
+    margin-left: 0px;
+
+    border: 2px solid var(--darkgrey);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.A{
+    background-image: url(/assets/images/alphabet/A.png);
+}
+
+.B{
+    background-image: url(/assets/images/alphabet/B.png);
+}
+.C{
+    background-image: url(/assets/images/alphabet/C.png);
+}
+.D{
+    background-image: url(/assets/images/alphabet/D.png);
+}
+.E{
+    background-image: url(/assets/images/alphabet/E.png);
+}
+.F{
+    background-image: url(/assets/images/alphabet/F.png);
+}
+.G{
+    background-image: url(/assets/images/alphabet/G.png);
+}
+.H{
+    background-image: url(/assets/images/alphabet/H.png);
+}
+.I{
+    background-image: url(/assets/images/alphabet/I.png);
+}
+.J{
+    background-image: url(/assets/images/alphabet/J.png);
+}
+.K{
+    background-image: url(/assets/images/alphabet/K.png);
+}
+.L{
+    background-image: url(/assets/images/alphabet/L.png);
+}
+.M{
+    background-image: url(/assets/images/alphabet/M.png);
+}
+.N{
+    background-image: url(/assets/images/alphabet/N.png);
+}
+.O{
+    background-image: url(/assets/images/alphabet/O.png);
+}
+.P{
+    background-image: url(/assets/images/alphabet/P.png);
+}
+.Q{
+    background-image: url(/assets/images/alphabet/Q.png);
+}
+.R{
+    background-image: url(/assets/images/alphabet/R.png);
+}
+.S{
+    background-image: url(/assets/images/alphabet/S.png);
+}
+.T{
+    background-image: url(/assets/images/alphabet/T.png);
+}
+.U{
+    background-image: url(/assets/images/alphabet/U.png);
+}
+.V{
+    background-image: url(/assets/images/alphabet/V.png);
+}
+.W{
+    background-image: url(/assets/images/alphabet/W.png);
+}
+.X{
+    background-image: url(/assets/images/alphabet/X.png);
+}
+.Y{
+    background-image: url(/assets/images/alphabet/Y.png);
+}
+.Z{
+    background-image: url(/assets/images/alphabet/Z.png);
+}
+
+@media only screen and (max-width: 800px) {
+    .box{
+        height:90vh;
+        flex-direction: column;
+    }
+    .left, .right{
+        width:100vw;
+        height:45vh;
+        overflow:hidden;
+    }
+    .title {
+        font-family: 'Abril Fatface', cursive;
+        font-size: 90px;
+        color: var(--white);
+    
+    }
+    
+    .heading {
+        font-family: 'Abril Fatface', cursive;
+        font-size: 40px;
+        color: var(--lightgrey); 
+    }
+
+    .swapButton{
+        font-size: 20px;
+    }
+    
+    .delButton{
+        font-size: 20px;
+    }
+
+    .top{
+        height:45%;
+    }
+    .bottom{
+        height:40%;
+    }
+
+    .aslCard{
+        width: 20%;
+        height: 15%;
+    }
+}
+

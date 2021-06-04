@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <title>ASL</title>
+</head>
+<body>
+    <div class="box" id="welcome">
+        <div class="left" id="Left">
+            <div class="heading">
+                Translate Text to ASL 
+            </div>
+            <div class="title">
+                Instantly.
+            </div>
+        </div>
+
+        <div class="right" id="Right">
+            
+            <button class="button" onclick="woosh()" value="Click">
+                Start.
+            </button>
+
+            <img class="image" src="/assets/images/asl.png">
+        </div>
+    </div>
+
+    <div class="Page">
+        <div class="top"> 
+            <div class="topLeft">
+                <textarea name="text" id="txtArea" cols="30" rows="10" placeholder="Type Something..."></textarea>
+                <div class="label">
+                    Input.
+                </div>
+            </div> 
+            <div class="topRight">
+                <div class="aslArea" id="aslArea">
+                    <!-- CARD GOES HERE -->
+                    
+
+                    
+                    <!-- CARD ENDS HERE -->
+                </div>
+                <div class="label">
+                    Output.
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="row">
+
+                <div class="frameKey" onclick="press('Q')">
+                    <div class="letterKey">Q</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/Q.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('W')">
+                    <div class="letterKey">W</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/W.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('E')">
+                    <div class="letterKey">E</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/E.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('R')">
+                    <div class="letterKey">R</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/R.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('T')">
+                    <div class="letterKey">T</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/T.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('Y')">
+                    <div class="letterKey">Y</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/Y.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('U')">
+                    <div class="letterKey">U</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/U.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('I')">
+                    <div class="letterKey">I</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/I.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('O')">
+                    <div class="letterKey">O</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/O.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('P')">
+                    <div class="letterKey">P</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/P.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="frameKey" onclick="press('A')">
+                    <div class="letterKey">A</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/A.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('S')">
+                    <div class="letterKey">S</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/S.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('D')">
+                    <div class="letterKey">D</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/D.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('F')">
+                    <div class="letterKey">F</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/F.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('G')">
+                    <div class="letterKey">G</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/G.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('H')">
+                    <div class="letterKey">H</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/H.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('J')">
+                    <div class="letterKey">J</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/J.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('K')">
+                    <div class="letterKey">K</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/K.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('L')">
+                    <div class="letterKey">L</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/L.png" alt="">
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+
+                <div class="frameKey" onclick="press('Z')">
+                    <div class="letterKey">Z</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/Z.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('X')">
+                    <div class="letterKey">X</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/X.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('C')">
+                    <div class="letterKey">C</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/C.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('V')">
+                    <div class="letterKey">V</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/V.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('B')">
+                    <div class="letterKey">B</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/B.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('N')">
+                    <div class="letterKey">N</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/N.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="press('M')">
+                    <div class="letterKey">M</div>
+                    <div class="aslKey">
+                        <img src="/assets/images/alphabet/M.png" alt="">
+                    </div>
+                </div>
+
+                <div class="frameKey" onclick="settingButton()">
+                    <svg class="settingLogo" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.5125 2.625C22.48 -0.875 17.52 -0.875 16.4875 2.625L16.2375 3.475C16.0832 3.99899 15.8136 4.4818 15.4485 4.88803C15.0833 5.29426 14.6319 5.61361 14.1272 5.82266C13.6226 6.03171 13.0776 6.12515 12.5321 6.09614C11.9867 6.06713 11.4546 5.9164 10.975 5.655L10.2 5.23C6.9925 3.485 3.485 6.9925 5.2325 10.1975L5.655 10.975C6.77 13.025 5.7125 15.5775 3.475 16.2375L2.625 16.4875C-0.875 17.52 -0.875 22.48 2.625 23.5125L3.475 23.7625C3.99899 23.9168 4.4818 24.1864 4.88803 24.5515C5.29426 24.9167 5.61361 25.3681 5.82266 25.8728C6.03171 26.3774 6.12515 26.9224 6.09614 27.4679C6.06713 28.0133 5.9164 28.5454 5.655 29.025L5.23 29.8C3.485 33.0075 6.9925 36.515 10.1975 34.7675L10.975 34.345C11.4546 34.0836 11.9867 33.9329 12.5321 33.9039C13.0776 33.8748 13.6226 33.9683 14.1272 34.1773C14.6319 34.3864 15.0833 34.7057 15.4485 35.112C15.8136 35.5182 16.0832 36.001 16.2375 36.525L16.4875 37.375C17.52 40.875 22.48 40.875 23.5125 37.375L23.7625 36.525C23.9168 36.001 24.1864 35.5182 24.5515 35.112C24.9167 34.7057 25.3681 34.3864 25.8728 34.1773C26.3774 33.9683 26.9224 33.8748 27.4679 33.9039C28.0133 33.9329 28.5454 34.0836 29.025 34.345L29.8 34.77C33.0075 36.515 36.515 33.0075 34.7675 29.8025L34.345 29.025C34.0836 28.5454 33.9329 28.0133 33.9039 27.4679C33.8748 26.9224 33.9683 26.3774 34.1773 25.8728C34.3864 25.3681 34.7057 24.9167 35.112 24.5515C35.5182 24.1864 36.001 23.9168 36.525 23.7625L37.375 23.5125C40.875 22.48 40.875 17.52 37.375 16.4875L36.525 16.2375C36.001 16.0832 35.5182 15.8136 35.112 15.4485C34.7057 15.0833 34.3864 14.6319 34.1773 14.1272C33.9683 13.6226 33.8748 13.0776 33.9039 12.5321C33.9329 11.9867 34.0836 11.4546 34.345 10.975L34.77 10.2C36.515 6.9925 33.0075 3.485 29.8025 5.2325L29.025 5.655C28.5454 5.9164 28.0133 6.06713 27.4679 6.09614C26.9224 6.12515 26.3774 6.03171 25.8728 5.82266C25.3681 5.61361 24.9167 5.29426 24.5515 4.88803C24.1864 4.4818 23.9168 3.99899 23.7625 3.475L23.5125 2.625ZM20 27.325C18.0573 27.325 16.1941 26.5533 14.8204 25.1796C13.4467 23.8059 12.675 21.9427 12.675 20C12.675 18.0573 13.4467 16.1941 14.8204 14.8204C16.1941 13.4467 18.0573 12.675 20 12.675C21.942 12.675 23.8046 13.4465 25.1778 14.8197C26.551 16.1929 27.3225 18.0555 27.3225 19.9975C27.3225 21.9395 26.551 23.8021 25.1778 25.1753C23.8046 26.5485 21.942 27.32 20 27.32V27.325Z" fill="white"/>
+                        </svg>                        
+                </div>
+
+            </div>
+
+            <div class="row">
+                <button class="swapButton" onclick="swapClick()" > SWAP</button>
+                <div class="spaceButton" onclick="press(' ')"></div>
+                <button class="delButton" onclick="delClick()" > DELETE </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/index.js"></script>
+</body>
+</html>
