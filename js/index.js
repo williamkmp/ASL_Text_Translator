@@ -42,9 +42,10 @@ function updateAslArea(){
     }
 }
 
-function checkFavourite(input){
+function checkFavourite(){
     let isFavourite = false;
-    let string = input.trim().toUpperCase();
+    let string = document.getElementById('txtArea').value.toString().trim().toUpperCase();
+    console.log("check : "+ string);
 
     for (let i = 0; i < favoriteList.length; i++){
         if(string === favoriteList[i]){
@@ -64,23 +65,27 @@ function checkFavourite(input){
     }
 }
 
-function textChange(input){
-    alphabetString = input.toUpperCase();
+function updatePage(){
     updateTextArea();
     updateAslArea();
-    checkFavourite(input);
+    checkFavourite();
+    refreshFavorite();
+}
+
+function textChange(input){
+    alphabetString = input.toUpperCase();
+    updatePage();
 }
 
 function delClick(){
     alphabetString = alphabetString.slice(0, -1);
-    updateTextArea();
-    updateAslArea();
+    updatePage();
 }
 
 document.getElementById('txtArea').addEventListener('input', function (event) {
     let input = event.target.value.toString();
     textChange(input);
-    checkFavourite(input);
+    updatePage();
 });
 
 function swapClick(){
@@ -123,8 +128,7 @@ function swapClick(){
 
 function press(char){
     alphabetString = alphabetString + char + "";
-    updateTextArea();
-    updateAslArea();
+    updatePage();
 }
 
 function settingButton(){
@@ -139,6 +143,7 @@ function settingButton(){
         menuContainer.classList.remove('menuShow');
         menuContainer.classList.add('menuExit');
     }
+    updatePage();
 }
 
 function updateFontLable(){
@@ -169,12 +174,13 @@ function addFavourite(){
         favoriteList.push(string);
         alert('Added "' + string + '" to your favourite list!');
     }
-    checkFavourite(string);
+    checkFavourite();
     console.log(favoriteList);
 }
 
 function insert(string){
     textChange(string);
+    updatePage();
     settingButton();
 }
 
@@ -182,6 +188,7 @@ function dump(string){
     console.log(favoriteList);
     favoriteList.splice(favoriteList.indexOf(string), 1);
     console.log(favoriteList);
+    updatePage();
     settingButton();
 }
 
