@@ -337,7 +337,7 @@ button:hover{
 
 }
 
-.swapButton:hover, .delButton:hover, .letterKey:hover{
+.spaceButton:hover, .swapButton:hover, .delButton:hover, .letterKey:hover{
     border: 2px solid var(--darkgrey);
     background-color: var(--white);
     color: var(--black);
