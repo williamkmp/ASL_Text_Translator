@@ -4,6 +4,8 @@
     --grey: #b9b9b9;
     --lightgrey: #dbdbdb;
     --darkgrey: #616161;
+
+    --font-size : 20px;
 }
 
 body {
@@ -97,7 +99,7 @@ body {
 }
 
 button:hover{
-    background-color: pink;
+    background-color: var(--white);
     margin:0px 0px 0px 0px;
 }
 
@@ -207,7 +209,7 @@ button:hover{
     padding: 2%;
     
     border: none;
-    font-size: 20px;
+    font-size: var(--font-size);
     font-family: 'Roboto Mono', monospace;
 }
 
@@ -225,7 +227,7 @@ button:hover{
 .label {
     
     position: absolute;
-    z-index: 99;
+    z-index: 10;
     bottom: 0px;
     left: 0px;
 
@@ -461,6 +463,228 @@ button:hover{
     background-image: url(/assets/images/alphabet/Z.png);
 }
 
+
+.swapTextGo{
+    animation-name: swapTextGo;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes swapTextGo {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.swapTextBack{
+    animation-name: swapTextBack;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes swapTextBack {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.swapAslGo{
+    animation-name: swapAslGo;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes swapAslGo {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.swapAslBack{
+    animation-name: swapAslBack;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes swapAslBack {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.menuContainer{
+    width: 100vw;
+    height: 100vh;
+    
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 19;
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.menuShow{
+    animation-name: menuShow;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    background-color: rgba(0,0,0,0.9);
+    opacity: 1;
+    display: flex;
+}
+
+@keyframes menuShow{
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(0%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+.menuExit{
+    animation-name: menuExit;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    background-color: rgba(0,0,0,0.9);
+    opacity: 1;
+    display:flex;
+}
+
+@keyframes menuExit{
+    0% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(0%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+.menuBox{
+    background-color:pink;
+    width:70vw;
+    height: 60vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.exitMenuButton{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin:0;
+    z-index: 20;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 5px;
+    
+    border: 2px solid var(--black);;
+    background-color: var(--white);
+    
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--black);
+}
+
+.exitMenuButton:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.optionframe{
+    width: 100%;
+    height: 50%;
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    background-color: var(--white);
+    border: 2px solid var(--black);
+    
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--black);
+
+}
+
+#slider{
+    margin-top: 20px;
+    width: 80%;
+    border: none;
+    appearance: none;
+}
+
+#slider::-webkit-slider-runnable-track {
+    width: 80%;
+    height: 5px;
+    background: var(--grey);
+    border: none;
+    border-radius: 3px;
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 20px;
+    width: 20px;
+    border-radius: none;
+    background: var(--black);
+    margin-top: -7px;
+}
+
+#slider:focus {
+    outline: none;
+}
+
+#slider:focus::-webkit-slider-runnable-track {
+    background: var(--darkgrey);
+    border-radius: none;
+}
+
+
+
 @media only screen and (max-width: 800px) {
     .box{
         height:90vh;
@@ -484,24 +708,23 @@ button:hover{
         color: var(--lightgrey); 
     }
 
-    .swapButton{
-        font-size: 20px;
-    }
-    
-    .delButton{
-        font-size: 20px;
-    }
-
     .top{
-        height:45%;
+        height:50%;
     }
     .bottom{
-        height:40%;
+        height:30%;
     }
 
     .aslCard{
         width: 20%;
         height: 15%;
     }
-}
 
+    .optionframe{
+        font-size: 20px;
+    }
+
+    .menuBox{
+        height: 40vh;
+    }
+}
