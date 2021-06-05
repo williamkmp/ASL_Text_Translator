@@ -38,6 +38,9 @@
                 <div class="label">
                     Input.
                 </div>
+                <div class="favouritesBtn" id="favouriteBtn" onclick="addFavourite()">
+                    <img class="" id="favouriteIcon"src="/assets/images/favourites.png" alt="">
+                </div>
             </div> 
             <div class="topRight">
                 <div class="aslArea" id="aslArea">
@@ -266,12 +269,27 @@
             <div class="exitMenuButton" onclick="settingButton()">
                 Close
             </div>
-            <div class="optionframe" >
+            <div class="fontChangeFrame" >
                 <label id="sizeLabel">Font Size : 20 px</label>
                 <input oninput="updateFontLable()" type="range" value="20" min="10" max="40" step="1" id="slider" />
             </div>
-            <div class="optionframe">
-                Favourites
+            <div class="favouriteFrame">
+                <div class="favouriteLabel">
+                    History
+                </div>
+                <div id="favouriteMenu">
+                    <div class="historyCard">
+                        <div class="content">
+                            HALO
+                        </div>
+                        <button class="cardBtn" value="HALO" onclick="insert(this.value)"> 
+                            Insert
+                        </button>
+                        <button class="cardBtn" value="HALO" onclick="dump(this.value)">
+                            Delete
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

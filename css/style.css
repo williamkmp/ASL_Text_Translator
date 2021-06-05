@@ -240,6 +240,47 @@ button:hover{
     background-color: var(--white);
 }
 
+.favouritesBtn {
+    width: 10%;
+    height: 10%;
+
+    position: absolute;
+    z-index: 10;
+    top: 0px;
+    right: 0px;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    border: 2px solid var(--black);
+    background-color: var(--white);
+    object-fit: scale-down;
+}
+
+.favouritesBtn:hover{
+    background-color: var(--black);
+}
+
+.favouritesBtn img{
+    display: inherit;
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+.active{
+    background-color: var(--black);
+}
+
+.svgActive{
+    filter:invert(100%);
+}
+
+.favouritesBtn:hover img{
+    filter:invert(100%);
+}
+
 .bottom {
     width:100%;
     height:50%;
@@ -594,9 +635,9 @@ button:hover{
 }
 
 .menuBox{
-    background-color:pink;
+    background-color: none;
     width:70vw;
-    height: 60vh;
+    height: 80vh;
     
     display: flex;
     align-items: center;
@@ -631,9 +672,9 @@ button:hover{
     color: var(--white);
 }
 
-.optionframe{
+.fontChangeFrame{
     width: 100%;
-    height: 50%;
+    height: 30%;
     
     display:flex;
     justify-content: center;
@@ -646,8 +687,120 @@ button:hover{
     font-size: 20px;
     font-family: 'Roboto Mono', monospace;
     color: var(--black);
-
 }
+
+.favouriteFrame{
+    width: 100%;
+    height: 70%;
+    
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.favouriteLabel{
+    width: 100%;
+    height: 20%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 5px;
+    
+    border: 2px solid var(--black);;
+    background-color: var(--white);
+    
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--black);
+}
+
+#favouriteMenu{
+    width: 100%;
+    height: 80%;
+
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+    border: 2px solid var(--black);;
+    background-color: var(--white);
+
+    overflow: auto;
+}
+
+.historyCard{
+    width: 100%;
+    min-height: 25%;
+    max-height: 25%;
+    
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+
+    overflow: hidden;
+
+    background-color: var(--white);
+    border: 2px solid var(--grey);
+    
+}
+
+.content {
+    height: 100%;
+    width: 70%;
+    padding: 10px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+    overflow: auto;
+
+    font-size: 15px;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--black);
+}
+
+.btnContainer {
+    height: 100%;
+    width: 30%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border-left: 2px solid var(--lightgrey);
+}
+
+.cardBtn {
+    height: 50%;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--white);
+    font-size: 15px;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--black);
+
+    box-shadow: none;
+    border: none;
+}
+
+.cardBtn:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+
 
 #slider{
     margin-top: 20px;
@@ -733,6 +886,6 @@ button:hover{
     }
 
     .menuBox{
-        height: 40vh;
+        height: 80vh;
     }
 }

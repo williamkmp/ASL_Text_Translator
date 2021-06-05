@@ -1,6 +1,8 @@
 let isAlphabet = false;
 let alphabetString = "";
 
+let favoriteList = [];
+
 function woosh(){
     document.getElementById('Left').classList.add('wooshLeft');
     document.getElementById('Right').classList.add('wooshRight');
@@ -40,10 +42,33 @@ function updateAslArea(){
     }
 }
 
+function checkFavourite(input){
+    let isFavourite = false;
+    let string = input.trim().toUpperCase();
+
+    for (let i = 0; i < favoriteList.length; i++){
+        if(string === favoriteList[i]){
+            isFavourite = true;
+            break;
+        }
+    }
+    var btn = document.getElementById('favouriteBtn');
+    var icon = document.getElementById('favouriteIcon');
+
+    if(isFavourite){
+        btn.classList.add('active');
+        icon.classList.add('svgActive');
+    }else{
+        if(btn.classList.contains('active'))btn.classList.remove('active');
+        if(icon.classList.contains('svgActive'))icon.classList.remove('svgActive');
+    }
+}
+
 function textChange(input){
     alphabetString = input.toUpperCase();
     updateTextArea();
     updateAslArea();
+    checkFavourite(input);
 }
 
 function delClick(){
@@ -55,6 +80,7 @@ function delClick(){
 document.getElementById('txtArea').addEventListener('input', function (event) {
     let input = event.target.value.toString();
     textChange(input);
+    checkFavourite(input);
 });
 
 function swapClick(){
@@ -108,7 +134,7 @@ function settingButton(){
     if(menuContainer.classList.contains('menuExit')){
         menuContainer.classList.remove('menuExit');
         menuContainer.classList.add('menuShow');
-        setTimeout
+        refreshFavorite();
     }else if(menuContainer.classList.contains('menuShow')){
         menuContainer.classList.remove('menuShow');
         menuContainer.classList.add('menuExit');
@@ -120,4 +146,93 @@ function updateFontLable(){
     let label = document.getElementById('sizeLabel');
     document.documentElement.style.setProperty('--font-size', slider.value.toString() + 'px');
     label.innerHTML = "Font Size : " + slider.value.toString() + " px";
+}
+
+function addFavourite(){
+    var push = true;
+    let string = document.getElementById('txtArea').value.toString().trim();
+
+    if(string === ""){
+        push = false;
+        console.log(favoriteList);
+        return;
+    } 
+
+    for(i=0; i<favoriteList.length; i++){
+        if(favoriteList[i] === string){
+            push = false;
+            break;
+        } 
+    }
+
+    if(push){
+        favoriteList.push(string);
+        alert('Added "' + string + '" to your favourite list!');
+    }
+    checkFavourite(string);
+    console.log(favoriteList);
+}
+
+function insert(string){
+    textChange(string);
+    settingButton();
+}
+
+function dump(string){
+    console.log(favoriteList);
+    favoriteList.splice(favoriteList.indexOf(string), 1);
+    console.log(favoriteList);
+    settingButton();
+}
+
+function createFavouriteCard(string){
+    let favoriteMenu = document.getElementById('favouriteMenu');
+
+    //creating the "Card"
+    let card = document.createElement('div');
+    card.classList.add('historyCard');
+
+    //creating and inserting "Content"
+    let content = document.createElement('div');
+    content.classList.add('content');
+    content.innerHTML = string;
+
+    //creating the insert and delete button
+    let btnContainer = document.createElement('div');
+    btnContainer.classList.add('btnContainer');
+
+    let insertBtn = document.createElement('button');
+    insertBtn.value = string;
+    insertBtn.classList.add('cardBtn');
+    insertBtn.innerHTML = "INSERT";
+    insertBtn.setAttribute("onClick", "insert(this.value)");
+
+    let deleteBtn = document.createElement('button');
+    deleteBtn.value = string;
+    deleteBtn.classList.add('cardBtn');
+    deleteBtn.innerHTML = "DELETE";
+    deleteBtn.setAttribute("onClick", "dump(this.value)");
+
+    btnContainer.appendChild(insertBtn);
+    btnContainer.appendChild(deleteBtn);
+
+    card.appendChild(content);
+    card.appendChild(btnContainer);
+    
+
+    favoriteMenu.appendChild(card);
+}
+
+function clearFavoriteMenu() {
+    let favoriteMenu = document.getElementById('favouriteMenu');
+    while (favoriteMenu.firstChild){
+        favoriteMenu.removeChild(favoriteMenu.lastChild);
+    }
+}
+
+function refreshFavorite(){
+    clearFavoriteMenu();
+    for (i = 0; i < favoriteList.length; i++){
+        createFavouriteCard(favoriteList[i]);
+    }
 }
