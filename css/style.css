@@ -683,9 +683,13 @@ button:hover{
     border-radius: none;
 }
 
+.filler{
+    display: flex;
+}
 
 
-@media only screen and (max-width: 800px) {
+
+@media only screen and (max-width: 1000px) {
     .box{
         height:90vh;
         flex-direction: column;
@@ -713,6 +717,10 @@ button:hover{
     }
     .bottom{
         height:30%;
+    }
+
+    .filler{
+        display: none;
     }
 
     .aslCard{
